@@ -1,0 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: biaroun <biaroun@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/20 15:29:36 by biaroun           #+#    #+#             */
+/*   Updated: 2023/10/20 16:10:20 by biaroun          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "HumanA.hpp"
+
+HumanA::HumanA(string name, Weapon &weapon) : _name(name) ,_weapon(weapon) {}
+HumanA::~HumanA(void) {}
+
+void    HumanA::attack(void) const{
+    cout << _name << " attacks with their " << _weapon.getType() << endl;
+}
