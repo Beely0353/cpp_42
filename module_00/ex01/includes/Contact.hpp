@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: biaroun <biaroun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:57:28 by biaroun           #+#    #+#             */
-/*   Updated: 2023/10/20 12:53:23 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/03/06 14:30:20 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,33 +26,31 @@
 # define YEL "\033[38;5;184m"
 # define END "\033[0m"
 
-using namespace std;
-
 class Contact {
 public:
 	Contact(void);
 	~Contact(void);
 
-	void	setFirstName(string first_name);
-	void	setLastName(string last_name);
-	void	setNickName(string nickname);
-	void	setPhoneNumber(string phone_number);
-	void	setDarkestSecret(string darkest_secret);
+	void	setFirstName(std::string first_name);
+	void	setLastName(std::string last_name);
+	void	setNickName(std::string nickname);
+	void	setPhoneNumber(std::string phone_number);
+	void	setDarkestSecret(std::string darkest_secret);
     void	setCreationDate(void);
 
-	string	getFirstName(void) const;
-	string	getLastName(void) const;
-	string	getNickName(void) const;
-	string	getPhoneNumber(void) const;
-	string	getDarkestSecret(void) const;
+	std::string	getFirstName(void) const;
+	std::string	getLastName(void) const;
+	std::string	getNickName(void) const;
+	std::string	getPhoneNumber(void) const;
+	std::string	getDarkestSecret(void) const;
     time_t getCreationDate(void) const;
 
 private:
-	string	_FirstName;
-	string	_LastName;
-	string	_NickName;
-	string	_PhoneNumber;
-	string	_DarkestSecret;
+	std::string	_FirstName;
+	std::string	_LastName;
+	std::string	_NickName;
+	std::string	_PhoneNumber;
+	std::string	_DarkestSecret;
     time_t	_CreationDate;
 
 };

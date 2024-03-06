@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: biaroun <biaroun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:58:22 by biaroun           #+#    #+#             */
-/*   Updated: 2023/10/18 13:45:25 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/03/06 14:27:08 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@ Contact::Contact(void) {}
 
 Contact::~Contact(void) {}
 
-void	Contact::setFirstName(string first_name) {
+void	Contact::setFirstName(std::string first_name) {
 	_FirstName = first_name;
 	return;
 }
 
-void	Contact::setLastName(string last_name) {
+void	Contact::setLastName(std::string last_name) {
 	_LastName = last_name;
 	return;
 }
 
-void	Contact::setNickName(string nickname) {
+void	Contact::setNickName(std::string nickname) {
 	_NickName = nickname;
 	return;
 }
 
-void	Contact::setPhoneNumber(string phone_number) {
+void	Contact::setPhoneNumber(std::string phone_number) {
 	_PhoneNumber = phone_number;
 	return;
 }
 
-void	Contact::setDarkestSecret(string darkest_secret) {
+void	Contact::setDarkestSecret(std::string darkest_secret) {
 	_DarkestSecret = darkest_secret;
 	return;
 }
@@ -47,23 +47,23 @@ void    Contact::setCreationDate() {
     _CreationDate = currentTime;
 }
 
-string	Contact::getFirstName(void) const {
+std::string	Contact::getFirstName(void) const {
 	return _FirstName;
 }
 
-string	Contact::getLastName(void) const {
+std::string	Contact::getLastName(void) const {
 	return _LastName;
 }
 
-string Contact::getNickName(void) const {
+std::string Contact::getNickName(void) const {
 	return _NickName;
 }
 
-string Contact::getPhoneNumber(void) const {
+std::string Contact::getPhoneNumber(void) const {
 	return _PhoneNumber;
 }
 
-string Contact::getDarkestSecret(void) const {
+std::string Contact::getDarkestSecret(void) const {
 	return _DarkestSecret;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: biaroun <biaroun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:18:02 by biaroun           #+#    #+#             */
-/*   Updated: 2023/10/20 13:30:34 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/03/06 14:35:42 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,14 @@ int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
-Account( int initial_deposit );
-~Account( void );
+Account::Account(int initial_deposit);
+Account::~Account(void) {
+
+	_displayTimestamp();
+	std::cout	<< "index:" << _accountIndex
+				<< ";amount:" << _amount
+				<< ";closed" << std::endl;
+}
 
 int	    Account::getNbAccounts( void ) {
     return _nbAccounts;
@@ -55,7 +61,7 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 }
 
 int		Account::checkAmount( void ) const {
-    cout << _amount << endl;
+    std::cout << _amount << std::endl;
 }
 
 void	Account::displayStatus( void ) const {
