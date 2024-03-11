@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: biaroun <biaroun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:51:12 by biaroun           #+#    #+#             */
-/*   Updated: 2023/10/20 15:11:21 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/03/11 15:03:01 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main() {
     int N = 5;
     Zombie *Horde = zombieHorde(N, "Sion");
-    string name;
+    std::string name;
 
     for (int i = 0; i < N; i++) {
         Horde[i].announce();

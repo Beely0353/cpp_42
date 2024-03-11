@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: biaroun <biaroun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:33:22 by biaroun           #+#    #+#             */
-/*   Updated: 2023/10/20 14:33:45 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/03/11 15:05:58 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include <iostream>
 # include <string>
 
-
-using namespace std;
-
 class Zombie {
 public:
     Zombie(void);
@@ -26,12 +23,12 @@ public:
 
     void announce(void) const;
 
-    void    setName(string name);
-    string  getName(void);
+    void    setName(std::string name);
+    std::string  getName(void);
 
 
 private:
-    string  _name;
+    std::string  _name;
 
 };
 

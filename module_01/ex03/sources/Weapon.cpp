@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: biaroun <biaroun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:29:06 by biaroun           #+#    #+#             */
-/*   Updated: 2023/10/24 19:18:18 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/03/11 15:03:01 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(string weapon) :_type(weapon) {}
+Weapon::Weapon(std::string weapon) :_type(weapon) {}
 Weapon::~Weapon(void) {}
 
-void    Weapon::setType(string type) {
+void    Weapon::setType(std::string type) {
     _type = type;
 }
 
-string const &Weapon::getType(void) const{
+std::string const &Weapon::getType(void) const{
     return (_type);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: biaroun <biaroun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:29:51 by biaroun           #+#    #+#             */
-/*   Updated: 2023/10/24 19:15:33 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/03/11 15:03:01 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class HumanB {
 public:
-    HumanB(string name);
+    HumanB(std::string name);
     ~HumanB(void);
 
     void    setWeapon(Weapon &weapon);
@@ -25,7 +25,7 @@ public:
 
 
 private:
-    string  _name;
+    std::string  _name;
     Weapon  *_weapon;
 
 };

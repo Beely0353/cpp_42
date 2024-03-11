@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: biaroun <biaroun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:51:25 by biaroun           #+#    #+#             */
-/*   Updated: 2023/10/20 14:24:34 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/03/11 15:03:18 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ Zombie::Zombie(void) {
 }
 
 Zombie::~Zombie(void) {
-    std::cout << _name << " has been destroyed" << std::endl;
+    std::std::cout << _name << " has been destroyed" << std::std::endl;
 }
 
 void Zombie::announce(void) const{
-    cout << _name << ": BraiiiiiiinnnzzzZ..." << endl;
+    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-void    Zombie::setName(string name) {
+void    Zombie::setName(std::string name) {
     _name = name;
 }
 
-string    Zombie::getName(void) {
+std::string    Zombie::getName(void) {
     return (_name);
 }
