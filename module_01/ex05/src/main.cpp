@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 13:51:25 by biaroun           #+#    #+#             */
-/*   Updated: 2024/03/11 15:19:06 by biaroun          ###   ########.fr       */
+/*   Created: 2023/11/17 14:53:42 by biaroun           #+#    #+#             */
+/*   Updated: 2024/03/11 16:00:17 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-Zombie::Zombie(void) {
-    _name = "Unnamed";
-}
+int main() {
 
-Zombie::~Zombie(void) {
-    std::cout << _name << " has been destroyed" << std::endl;
-}
+    Harl Harl;
+    std::string chosenLevel;
 
-void Zombie::announce(void) const{
-    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-void    Zombie::setName(std::string name) {
-    _name = name;
-}
-
-std::string    Zombie::getName(void) {
-    return (_name);
+    while (1) {
+        std::cout << BEI <<"Choose a level of complain: " EOC;
+	    std::getline(std::cin, chosenLevel);
+        if (std::cin.fail())
+            exit(1);
+        Harl.complain(chosenLevel);
+    }
 }

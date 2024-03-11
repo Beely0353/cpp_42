@@ -13,8 +13,8 @@ UP		=	\033[A
 
 NAME 			=	
 
-SOURCES			=	./sources
-INCLUDES		=	./includes
+SOURCES			=	./src
+INCLUDES		=	./inc
 OBJECTS			=	./bin
 
 SRCS 			=	
@@ -28,7 +28,7 @@ CDEPENDENCIES	=
 # ---------------------------------------------------------------------------- #
 
 SRCS_COUNT = 0
-SRCS_TOT = ${shell find ./sources/ -type f -name '*.cpp' | wc -l}
+SRCS_TOT = ${shell find ./src/ -type f -name '*.cpp' | wc -l}
 SRCS_PRCT = ${shell expr 100 \* ${SRCS_COUNT} / ${SRCS_TOT}}
 BAR =  ${shell expr 23 \* ${SRCS_COUNT} / ${SRCS_TOT}}
 

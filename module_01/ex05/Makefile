@@ -11,24 +11,24 @@ CUR		=	\033[3m
 UL		=	\033[4m
 UP		=	\033[A
 
-NAME 			=	replace
+NAME 			=	Harl
 
-SOURCES			=	./sources
-INCLUDES		=	./includes
+SOURCES			=	./src
+INCLUDES		=	./inc
 OBJECTS			=	./bin
 
-SRCS 			=	main.cpp
+SRCS 			=	main.cpp Harl.cpp
 
 OBJS			=	$(addprefix ${OBJECTS}/, $(SRCS:.cpp=.o))
 
 CFLAGS			=	-Wall -Wextra -Werror -std=c++98
 CC				=	c++
-CINCLUDES		=	-I ${INCLUDES}
+CINCLUDES		=	-I${INCLUDES}
 CDEPENDENCIES	=	
 # ---------------------------------------------------------------------------- #
 
 SRCS_COUNT = 0
-SRCS_TOT = ${shell find ./sources/ -type f -name '*.cpp' | wc -l}
+SRCS_TOT = ${shell find ./src/ -type f -name '*.cpp' | wc -l}
 SRCS_PRCT = ${shell expr 100 \* ${SRCS_COUNT} / ${SRCS_TOT}}
 BAR =  ${shell expr 23 \* ${SRCS_COUNT} / ${SRCS_TOT}}
 

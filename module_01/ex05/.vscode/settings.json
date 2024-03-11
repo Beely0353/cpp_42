@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "iosfwd": "cpp",
-        "std::string": "cpp"
-    }
-}
