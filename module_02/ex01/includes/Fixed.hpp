@@ -14,16 +14,16 @@
 # define FIXED_HPP
 
 # include <iostream>
-using namespace std;
+# include	<cmath>
 
 class Fixed {
     public:
         Fixed(void);
-        Fixed(const int e);
+        Fixed(const int i);
         Fixed(const float f);
 
         Fixed(Fixed const &cpy);
-        Fixed &operator=(Fixed const &rhs);
+        Fixed &operator=(Fixed const &a);
 	    ~Fixed(void);
 
         int getRawBits(void) const;
@@ -33,8 +33,10 @@ class Fixed {
         int toInt( void ) const;
 
     private:
-        int _bit = 8;
-
+        static const int m_bit = 8;
+        int m_nbr;
 };
+
+std::ostream &operator<<( std::ostream &flux, Fixed const &a );
 
 #endif

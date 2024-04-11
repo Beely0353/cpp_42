@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 13:51:25 by biaroun           #+#    #+#             */
-/*   Updated: 2024/03/19 13:32:58 by biaroun          ###   ########.fr       */
+/*   Created: 2024/04/11 12:36:31 by biaroun           #+#    #+#             */
+/*   Updated: 2024/04/11 12:49:52 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-Zombie::Zombie(void) {
-    _name = "Unnamed";
-}
+# include  "ClapTrap.hpp"
 
-Zombie::~Zombie(void) {
-    std::cout << _name << " has been destroyed" << std::endl;
-}
+class ScavTrap : public ClapTrap {
+    public:
+        ScavTrap(void);
+        ScavTrap(std::string name);
+        ScavTrap(const ScavTrap &src);
+        ~ScavTrap(void);
 
-void Zombie::announce(void) const{
-    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+        void attack(const std::string &target);
+        void guardGate();
+};
 
-void    Zombie::setName(std::string name) {
-    _name = name;
-}
-
-std::string    Zombie::getName(void) {
-    return (_name);
-}
+#endif

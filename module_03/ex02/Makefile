@@ -11,13 +11,13 @@ CUR		=	\033[3m
 UL		=	\033[4m
 UP		=	\033[A
 
-NAME 			=	ClapTrap
+NAME 			=	RepetitiveWork
 
 SOURCES			=	./src
 INCLUDES		=	./inc
 OBJECTS			=	./bin
 
-SRCS 			=	main.cpp ClapTrap.cpp
+SRCS 			=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS			=	$(addprefix ${OBJECTS}/, $(SRCS:.cpp=.o))
 

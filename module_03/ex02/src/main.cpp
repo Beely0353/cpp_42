@@ -6,19 +6,20 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:57:07 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/11 12:54:03 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/04/11 13:23:35 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
-    ScavTrap Gentil("Mordecai");
-    ScavTrap Mechant("Saturn");
-    ScavTrap Default;
+    FragTrap Gentil("Sirene");
+    FragTrap Mechant("Sadique");
+    FragTrap Default;
 
-    Gentil.attack("Saturn");
+    Gentil.attack("Sadique");
     std::cout << "[TEST PRINCIPAL] Statistique de dégâts [ " << Gentil.getAttackDmg() << " ]" << std::endl << std::endl;
 
     std::cout << "[TEST PRINCIPAL] Statistique des points de vie AVANT de subir des dégâts [ " << Gentil.getHitPoints() << " ]" << std::endl;
@@ -30,10 +31,10 @@ int main(void)
     std::cout << "[TEST PRINCIPAL] Statistique des points de vie APRÈS la réparation [ " << Gentil.getHitPoints() << " ]" << std::endl;
     std::cout << "[TEST PRINCIPAL] Statistique des points d'énergie [ " << Gentil.getEnergyPoints() << " ]" << std::endl << std::endl;
 
-    Gentil.guardGate();
+    Gentil.highFivesGuys();
     std::cout << std::endl << std::endl;
 
-    Mechant.attack("Mordecai");
+    Mechant.attack("Sirene");
     std::cout << "[TEST PRINCIPAL] Statistique de dégâts [ " << Mechant.getAttackDmg() << " ]" << std::endl << std::endl;
 
     std::cout << "[TEST PRINCIPAL] Statistique des points de vie AVANT de subir des dégâts [ " << Default.getHitPoints() << " ]" << std::endl;
@@ -45,7 +46,7 @@ int main(void)
     std::cout << "[TEST PRINCIPAL] Statistique des points d'énergie APRÈS la réparation [ " << Mechant.getEnergyPoints() << " ]" << std::endl;
     std::cout << "[TEST PRINCIPAL] Statistique des points de vie [ " << Mechant.getHitPoints() << " ]" << std::endl << std::endl;
 
-    Mechant.guardGate();
+    Mechant.highFivesGuys();
     std::cout << std::endl << std::endl;
 
     Default.attack("Random");
@@ -60,8 +61,9 @@ int main(void)
     std::cout << "[TEST PRINCIPAL] Statistique des points d'énergie APRÈS la réparation [ " << Default.getEnergyPoints() << " ]" << std::endl;
     std::cout << "[TEST PRINCIPAL] Statistique des points de vie [ " << Default.getHitPoints() << " ]" << std::endl << std::endl;
 
-    Default.guardGate();
+    Default.highFivesGuys();
     std::cout << std::endl << std::endl;
 
     return (0);
 }
+

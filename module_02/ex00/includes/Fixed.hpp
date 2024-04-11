@@ -14,21 +14,20 @@
 # define FIXED_HPP
 
 # include <iostream>
-using namespace std;
 
 class Fixed {
     public:
         Fixed(void);
         Fixed(Fixed const &cpy);
-        Fixed &operator=(Fixed const &rhs);
+        Fixed &operator=(Fixed const &a);
 	    ~Fixed(void);
 
         int getRawBits(void) const;
         void setRawBits(int const raw);
 
     private:
-        int _nbr;
-        static const int _bit = 8;
+        int m_nbr;
+        static const int m_bit = 8;
 };
 
 #endif

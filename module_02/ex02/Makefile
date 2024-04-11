@@ -11,13 +11,13 @@ CUR		=	\033[3m
 UL		=	\033[4m
 UP		=	\033[A
 
-NAME 			=	
+NAME 			=	Fixed
 
 SOURCES			=	./src
 INCLUDES		=	./inc
 OBJECTS			=	./bin
 
-SRCS 			=	
+SRCS 			=	main.cpp Fixed.cpp
 
 OBJS			=	$(addprefix ${OBJECTS}/, $(SRCS:.cpp=.o))
 
