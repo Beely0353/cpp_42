@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:46:00 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/12 08:03:45 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/04/12 08:13:16 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,10 @@
 
 int main()
 {
-    const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
-    std::cout << meta->getType() << " " << std::endl;
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
-    meta->makeSound();
     j->makeSound();
     i->makeSound();
 
@@ -35,19 +32,6 @@ int main()
 
     delete i;
     delete j;
-    delete meta;
-
-    const Animal *tab[100];
-    for (int i = 0; i <= 100; i++) {
-        if (i % 2 == 0) 
-            tab[i] = new Dog();
-        else
-            tab[i] = new Cat();
-    }
-
-    for (int i = 0; i <= 100; i++) {
-        delete tab[i];
-    }
     
     return 0;
 }
