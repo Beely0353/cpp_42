@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:43:55 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/12 07:40:31 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/06/05 17:11:55 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,14 @@
     Dog::Dog(Dog const &src): Animal(src) {
         *this = src;
     }
+    
+    Dog &Dog::operator=(Dog const &rhs) {
+        std::cout << "Dog copy assignment operator called" << std::endl;
+        if (this != &rhs) {
+        Animal::operator=(rhs);
+        }
+        return *this;
+}
 
     Dog::~Dog(void) {
         std::cout << "Destruction d'un chien" << std::endl;

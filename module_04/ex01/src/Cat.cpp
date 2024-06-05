@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:40:37 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/12 07:45:35 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/06/05 17:09:15 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
     Cat::Cat(void) {
         type = "Cat";
-        m_brain = new Brain();
         std::cout << "Creation d'un chat" << std::endl;
     }
 
@@ -22,8 +21,16 @@
         *this = src;
     }
 
+    Cat &Cat::operator=(Cat const &rhs) {
+        std::cout << "Cat copy assignment operator called" << std::endl;
+        if (this != &rhs) {
+            Animal::operator=(rhs);
+            this->type = rhs.type;
+        }
+        return *this;
+}
+
     Cat::~Cat(void) {
-        delete m_brain;
         std::cout << "Destruction d'un chat" << std::endl;
     }
 

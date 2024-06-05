@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 07:18:45 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/12 07:31:37 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/06/05 17:12:32 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 
     WrongAnimal::WrongAnimal(WrongAnimal const &src) {
         *this = src;
+    }
+
+    WrongAnimal &WrongAnimal::operator=(WrongAnimal const &rhs) {
+        std::cout << "WrongAnimal copy assignment operator called" << std::endl;
+        if (this != &rhs) {
+            this->type = rhs.type;
+        }
+        return *this;
     }
 
     WrongAnimal::~WrongAnimal(void) {

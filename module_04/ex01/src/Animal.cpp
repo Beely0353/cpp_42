@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:38:11 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/12 07:40:20 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/06/05 17:08:17 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 
     Animal::Animal(Animal const &src) {
         *this = src;
+    }
+    
+    Animal &Animal::operator=(Animal const &rhs) {
+        std::cout << "Animal copy assignment operator called" << std::endl;
+        if (this != &rhs) {
+            this->type = rhs.type;
+        }
+        return *this;
     }
 
     Animal::~Animal(void) {

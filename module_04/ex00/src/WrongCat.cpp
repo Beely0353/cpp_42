@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 07:17:38 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/12 07:31:28 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/06/05 17:12:58 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@
         *this = src;
     }
 
+    WrongCat &WrongCat::operator=(WrongCat const &rhs) {
+        std::cout << "WrongCat copy assignment operator called" << std::endl;
+        if (this != &rhs) {
+            WrongAnimal::operator=(rhs); // Appel à l'opérateur d'affectation de la classe de base
+            // Pas de membres spécifiques à WrongCat à copier pour l'instant
+        }
+        return *this;
+    }
     WrongCat::~WrongCat(void) {
         std::cout << "Destruction d'un WrongCat" << std::endl;
     }

@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:40:37 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/12 07:30:30 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/06/05 17:09:15 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@
     Cat::Cat( Cat const &src ): Animal(src) { 
         *this = src;
     }
+
+    Cat &Cat::operator=(Cat const &rhs) {
+        std::cout << "Cat copy assignment operator called" << std::endl;
+        if (this != &rhs) {
+            Animal::operator=(rhs);
+            this->type = rhs.type;
+        }
+        return *this;
+}
 
     Cat::~Cat(void) {
         std::cout << "Destruction d'un chat" << std::endl;
