@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:44:33 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/11 13:19:53 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/06/05 16:54:58 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,35 @@ ClapTrap::ClapTrap(ClapTrap const &src) {
     *this = src;
 }
 
+ClapTrap &ClapTrap::operator=(ClapTrap const &a) {
+	std::cout << "Copy assignment operator called" << std::endl;
+    m_name = a.getName();
+    m_hit  = a.getHitPoints();
+    m_energy = a.getEnergyPoints();
+    m_dmg    = a.getAttackDmg();
+
+	return *this;
+}
+
 ClapTrap::~ClapTrap(void) {
     std::cout << "Destructor ClapTrap: " << m_name << std::endl;
 }
 
 /*-----------------------*/
 
-std::string    ClapTrap::getName(void) {
+std::string    ClapTrap::getName(void) const{
     return (m_name);
 }
 
-unsigned int    ClapTrap::getHitPoints(void) {
+unsigned int    ClapTrap::getHitPoints(void) const{
     return (m_hit);
 }
 
-unsigned int    ClapTrap::getEnergyPoints(void) {
+unsigned int    ClapTrap::getEnergyPoints(void) const{
     return (m_energy);
 }
 
-unsigned int    ClapTrap::getAttackDmg(void) {
+unsigned int    ClapTrap::getAttackDmg(void) const{
     return (m_dmg);
 }
 

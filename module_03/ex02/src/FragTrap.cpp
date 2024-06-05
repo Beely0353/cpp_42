@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:05:07 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/11 13:10:47 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/06/05 17:04:29 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 FragTrap::FragTrap(void) {
     m_hit = 100;
-    m_energy = 50; 
-    m_dmg = 20;
+    m_energy = 100; 
+    m_dmg = 30;
     std::cout << "Init FragTrap: Default" << std::endl;
 }
 
@@ -32,6 +32,16 @@ FragTrap::FragTrap(std::string name) {
 FragTrap::FragTrap(FragTrap const &src): ClapTrap(src){
     std::cout << "Copy FragTrap: " << src.m_name << " -> " << m_name << std::endl;
     *this = src;
+}
+
+FragTrap &FragTrap::operator=(FragTrap const &a) {
+	std::cout << "Copy assignment operator called" << std::endl;
+    m_name = a.getName();
+    m_hit  = a.getHitPoints();
+    m_energy = a.getEnergyPoints();
+    m_dmg    = a.getAttackDmg();
+
+	return *this;
 }
 
 FragTrap::~FragTrap(void) {

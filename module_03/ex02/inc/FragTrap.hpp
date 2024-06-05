@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:11:50 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/11 13:11:51 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/06/05 17:01:52 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class FragTrap : public ClapTrap {
         FragTrap(void);
         FragTrap(std::string name);
         FragTrap(const FragTrap &src);
+        FragTrap &operator=(FragTrap const &a);
         ~FragTrap(void);
 
         void attack(const std::string &target);

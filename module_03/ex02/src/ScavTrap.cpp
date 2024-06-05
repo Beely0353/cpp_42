@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:40:20 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/11 13:11:55 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/06/05 16:58:58 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,16 @@ ScavTrap::ScavTrap(std::string name) {
 ScavTrap::ScavTrap(ScavTrap const &src): ClapTrap(src){
     std::cout << "Copy ScavTrap: " << src.m_name << " -> " << m_name << std::endl;
     *this = src;
+}
+
+ScavTrap &ScavTrap::operator=(ScavTrap const &a) {
+	std::cout << "Copy assignment operator called" << std::endl;
+    m_name = a.getName();
+    m_hit  = a.getHitPoints();
+    m_energy = a.getEnergyPoints();
+    m_dmg    = a.getAttackDmg();
+
+	return *this;
 }
 
 ScavTrap::~ScavTrap(void) {
