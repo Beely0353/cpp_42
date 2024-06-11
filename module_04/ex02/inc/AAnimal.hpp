@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 13:28:13 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/12 08:08:22 by biaroun          ###   ########.fr       */
+/*   Created: 2024/06/11 18:53:00 by biaroun           #+#    #+#             */
+/*   Updated: 2024/06/11 19:01:39 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
+# include <iostream>
 # include "Brain.hpp"
 
-class Animal {
+class AAnimal {
     public:
-        virtual ~Animal() {}
+        AAnimal(void);
+        AAnimal(AAnimal const &src);
+        AAnimal &operator=(AAnimal const &rhs);
+        virtual ~AAnimal( void );
 
         std::string	getType( void ) const;
 

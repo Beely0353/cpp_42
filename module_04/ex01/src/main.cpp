@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:46:00 by biaroun           #+#    #+#             */
-/*   Updated: 2024/04/12 08:03:45 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/06/11 18:45:57 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,22 @@ int main()
     delete j;
     delete meta;
 
-    const Animal *tab[100];
-    for (int i = 0; i <= 100; i++) {
-        if (i % 2 == 0) 
+    const Animal *tab[10];
+    for (int i = 0; i <= 10; i++) {
+        if (i % 2 == 0)
             tab[i] = new Dog();
         else
             tab[i] = new Cat();
     }
 
-    for (int i = 0; i <= 100; i++) {
+    for (int i = 0; i <= 10; i++) {
         delete tab[i];
     }
-    
+
+    Cat cat;
+    cat.getType();
+    cat.makeSound();
+    cat.setBrain("chase mouse", 0);
+    cat.sayBrain(0);
     return 0;
 }

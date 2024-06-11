@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:35:08 by biaroun           #+#    #+#             */
-/*   Updated: 2024/06/05 17:08:50 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/06/11 18:40:38 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ class Cat: public Animal {
         virtual ~Cat(void);
 
         void	makeSound(void) const;
+        void    setBrain(const std::string& idea, int index);
+        void    sayBrain(int index);
+    private:
+        Brain *m_brain;
 };
 
 #endif

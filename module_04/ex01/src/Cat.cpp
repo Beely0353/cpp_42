@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:40:37 by biaroun           #+#    #+#             */
-/*   Updated: 2024/06/05 17:09:15 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/06/11 18:43:08 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
     Cat::Cat(void) {
         type = "Cat";
+        m_brain = new Brain();
         std::cout << "Creation d'un chat" << std::endl;
     }
 
@@ -31,6 +32,7 @@
 }
 
     Cat::~Cat(void) {
+        delete(m_brain);
         std::cout << "Destruction d'un chat" << std::endl;
     }
 
@@ -39,3 +41,11 @@
 void	Cat::makeSound(void) const {
     std::cout << "miaou" << std::endl;
  }
+
+void    Cat::setBrain(const std::string& idea, int index){
+    m_brain->SetIdea(idea, index);
+}
+
+void    Cat::sayBrain(int index) {
+    std::cout << "mon idée n°" << index << " est " << m_brain->GetIdea(index)<< std::endl;
+}
