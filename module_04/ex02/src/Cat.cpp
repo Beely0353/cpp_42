@@ -38,14 +38,14 @@
 
 /**********************************/
 
-void	Cat::makeSound(void) const {
-    std::cout << "miaou" << std::endl;
- }
+    void	Cat::makeSound(void) const {
+        std::cout << "miaou" << std::endl;
+    }
 
-void    Cat::setBrain(const std::string& idea, int index){
-    m_brain->SetIdea(idea, index);
-}
+    void    Cat::setBrain(const std::string& idea, int index){
+        m_brain->SetIdea(idea, index);
+    }
 
-void    Cat::sayBrain(int index) {
-    std::cout << "mon idée n°" << index << " est " << m_brain->GetIdea(index)<< std::endl;
-}
+    void    Cat::sayBrain(int index) {
+        std::cout << "mon idée n°" << index << " est " << m_brain->GetIdea(index)<< std::endl;
+    }

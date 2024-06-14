@@ -22,7 +22,7 @@ class Dog: public AAnimal {
         Dog &operator=(Dog const &rhs);
         ~Dog(void);
 
-        void	makeSound(void) const;
+        virtual void	makeSound(void) const;
         void    setBrain(const std::string& idea, int index);
         void    sayBrain(int index);
     private:

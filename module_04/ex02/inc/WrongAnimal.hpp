@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef WRONGANIMAL_HPP
-# define WrongANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <iostream>
 

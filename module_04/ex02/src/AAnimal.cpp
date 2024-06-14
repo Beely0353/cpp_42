@@ -12,9 +12,9 @@
 
 #include "AAnimal.hpp"
 
-    /*Animal::AAnimal(void) {
+    AAnimal::AAnimal(void) {
         std::cout << "Creation d'un AAnimal" << std::endl;
-    }*/
+    }
 
     AAnimal::AAnimal(AAnimal const &src) {
         *this = src;

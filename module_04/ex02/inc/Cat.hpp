@@ -22,7 +22,7 @@ class Cat: public AAnimal {
         Cat &operator=(Cat const &rhs);
         virtual ~Cat(void);
 
-        void	makeSound(void) const;
+        virtual void	makeSound(void) const;
         void    setBrain(const std::string& idea, int index);
         void    sayBrain(int index);
     private:
