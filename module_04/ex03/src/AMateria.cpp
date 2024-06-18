@@ -45,6 +45,14 @@
         return(m_type);
     }
 
+    int AMateria::getidx(int i, AMateria *m) {
+        if (i < 0 || i > 3){
+            std::cout << i << " is too big, need number between 0 and 3" << std::endl;
+            return -1;
+        }
+        delete m;
+        return i;
+    }
     void AMateria::use(ICharacter& target) {
         std::cout << this->m_type << "used on" << target.getName() << std::endl;
     }

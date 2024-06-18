@@ -29,6 +29,7 @@ class AMateria {
         virtual std::string const & getType() const;
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
+        int getidx(int i, AMateria *m);
 
     
     protected:

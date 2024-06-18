@@ -47,7 +47,7 @@
             for (int i = 0; i != 3; i++) {
                 if (m_materia[i])
                     delete m_materia[i];
-                m_materia[i] = rhs.m_materia[i];
+                m_materia[i] = rhs.m_materia[i]->clone();
             }
             m_name = rhs.m_name;
         }
@@ -82,9 +82,8 @@
             else if (m_materia[idx] == NULL)
                 std::cout << m_name << " nothing is equipped at index " << idx << std::endl;
             else {
-                std::cout << m_name << " has unequiped" << m_materia[idx]->getType() << " at slot " << idx << std::endl;
-                delete m_materia[idx];
-                m_materia[idx] = NULL;
+                std::cout << m_name << " has unequiped " << m_materia[idx]->getType() << " at slot " << m_materia[idx]->getidx(idx, m_materia[idx]) << std::endl;
+                m_materia[idx] = 0;
             }
         }
     
