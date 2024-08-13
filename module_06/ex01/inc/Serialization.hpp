@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serialization.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 22:09:23 by biaroun           #+#    #+#             */
-/*   Updated: 2024/08/09 22:16:10 by biaroun          ###   ########.fr       */
+/*   Created: 2024/08/13 12:56:52 by biaroun           #+#    #+#             */
+/*   Updated: 2024/08/13 13:18:12 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#pragma once
 
-int main(int argc, char* argv[]) {
-    if (argc != 2) {
-        std::cerr << "Usage: " << argv[0] << " <value>" << std::endl;
-        return 1;
-    }
-
-    ScalarConverter sc(argv[1]);
+#include <string>
+#include <iostream>
+#include <stdint.h>
 
 
-    sc.setType();
-    //sc.isImpossible();
-    sc.converter();
+typedef struct Data
+{
+	std::string	name;
+	int		    id;
+}				Data;
 
-    sc.printChar();
-    sc.printInt();
-    sc.printFloat();
-    sc.printDouble();
-
-    return 0;
-}
+ class Serializer {
+    public:
+        static uintptr_t serialize(Data* ptr);
+        static Data* deserialize(uintptr_t raw);
+};

@@ -11,13 +11,13 @@ CUR		=	\033[3m
 UL		=	\033[4m
 UP		=	\033[A
 
-NAME 			=	convert
+NAME 			=	Identify
 
 SOURCES			=	./src
 INCLUDES		=	./inc
 OBJECTS			=	./bin
 
-SRCS 			=	main.cpp ScalarConverter.cpp ScalarConverterPrint.cpp ScalarConverterUtils.cpp
+SRCS 			=	main.cpp Base.cpp
 
 OBJS			=	$(addprefix ${OBJECTS}/, $(SRCS:.cpp=.o))
 

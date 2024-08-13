@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 22:09:23 by biaroun           #+#    #+#             */
-/*   Updated: 2024/08/09 22:16:10 by biaroun          ###   ########.fr       */
+/*   Created: 2024/08/13 13:21:20 by biaroun           #+#    #+#             */
+/*   Updated: 2024/08/13 13:26:12 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#pragma once
 
-int main(int argc, char* argv[]) {
-    if (argc != 2) {
-        std::cerr << "Usage: " << argv[0] << " <value>" << std::endl;
-        return 1;
-    }
-
-    ScalarConverter sc(argv[1]);
+#include <iostream>
 
 
-    sc.setType();
-    //sc.isImpossible();
-    sc.converter();
+class Base {
+    public:
+        virtual ~Base();
+};
 
-    sc.printChar();
-    sc.printInt();
-    sc.printFloat();
-    sc.printDouble();
-
-    return 0;
-}
+class A : public Base {};
+class B : public Base {};
+class C : public Base {};
