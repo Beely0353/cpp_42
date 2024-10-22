@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 21:31:06 by biaroun           #+#    #+#             */
-/*   Updated: 2024/08/13 12:33:12 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/10/22 22:19:51 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,13 @@
             m_type = CHAR;
         if (isInt())
             m_type = INT;
-        if (isDouble())
-            m_type = DOUBLE;
         if (isFloat())
             m_type = FLOAT;
+        if (isDouble())
+            m_type = DOUBLE;
         if (isLite())
             m_type = LITERALS;
+            
         
     }
     
@@ -100,6 +101,9 @@
                 m_float  = static_cast< float >( m_double );
                 m_char   = static_cast< char >( m_double );
                 m_int    = static_cast< int >( m_double );
+                break;
+            case LITERALS:
+                printLiterals();
                 break;
             default:
                 break;

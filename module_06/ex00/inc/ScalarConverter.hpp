@@ -6,7 +6,7 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 17:31:32 by biaroun           #+#    #+#             */
-/*   Updated: 2024/08/09 22:15:40 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/10/22 22:04:00 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <sstream>
+#include <limits>
 
 
 enum e_type {
@@ -53,9 +54,11 @@ class ScalarConverter {
         double  getDouble(void) const;
         bool    isDouble(void) const;
         void    printDouble(void) const;
+        
+        bool   isLite(void) const;
+        void   printLiterals(void) const;
 
         void   isImpossible(void);
-        bool   isLite( void ) const;
         void   converter(void);
         void   setType(void);
         

@@ -6,22 +6,25 @@
 /*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 15:38:31 by biaroun           #+#    #+#             */
-/*   Updated: 2024/08/09 21:32:10 by biaroun          ###   ########.fr       */
+/*   Updated: 2024/10/22 22:22:43 by biaroun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
     bool    ScalarConverter::isChar(void) const {
-        return m_av.length() == 1 && std::isalpha( m_av[0] ) && std::isprint( m_av[0] );
+        return m_av.length() == 1 && std::isprint(m_av.at(0));
     }
 
     bool    ScalarConverter::isInt( void ) const {
         int    j = 0;
+
         if ( m_av[j] == '-' || m_av[j] == '+' )
             j++;
+        if (m_av[j] == '\0')
+            return false;
         while (m_av[j]) {
-            if ( !std::isdigit( m_av[j] ) )
+            if (!std::isdigit( m_av[j] ) )
                 return false;
             j++;
         }
@@ -40,7 +43,13 @@
     }
 
     bool ScalarConverter::isFloat(void) const {
-        std::istringstream iss(m_av);
+        std::string input = m_av;
+
+        if (!input.empty() && input[input.length() - 1] == 'f') {
+            input.erase(input.length() - 1);
+        }
+
+        std::istringstream iss(input);
         float f;
         iss >> f;
 
@@ -51,5 +60,5 @@
     }
 
     bool ScalarConverter::isLite(void) const {
-        return (m_av == "nan" || m_av == "+inf" || m_av == "-inf");
+        return (m_av == "nan" || m_av == "+inf" || m_av == "-inf" || m_av == "+inff" || m_av == "-inff" || m_av == "nanf");
     }
