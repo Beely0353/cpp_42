@@ -1,13 +1,13 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: biaroun <biaroun@student.42nice.fr> >      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/30 17:31:34 by biaroun           #+#    #+#             */
-/*   Updated: 2024/12/30 18:07:59 by biaroun          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "PmergeMe.hpp"
+
+int main(int argc, char **argv)
+{
+    MergeProcessor merge_processor;
+
+    if (argc > 1)
+    {
+        merge_processor.ValidateInputNumbers(argv);
+    }
+
+    return 0;
+}
